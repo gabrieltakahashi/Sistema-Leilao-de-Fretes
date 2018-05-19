@@ -1,33 +1,36 @@
-package edu.leilao.dao;
+package edu.leilao.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexao {
-	private static Conexao instancia;
+public class ConnectionFactory {
+	private static ConnectionFactory instancia;
 	private Connection connection;
 
-	private Conexao() {
+	private ConnectionFactory() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			String driver = "com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://127.0.0.1:3306/leilao";
 			String user = "root";
 			String pass = "root";
+
+			Class.forName(driver);
 			connection = DriverManager.getConnection(url, user, pass);
 			System.out.println("Conexão realizada");
 		} catch (SQLException e) {
-			System.out.println("SQLException");
+			System.out.println("SQL Exception");
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			System.out.println("Class Not Found Exception");
 			e.printStackTrace();
 		}
 
 	}
 
-	public static Conexao getInstancia() {
+	public static ConnectionFactory getInstancia() {
 		if (instancia == null) {
-			instancia = new Conexao();
+			instancia = new ConnectionFactory();
 		}
 		return instancia;
 	}
