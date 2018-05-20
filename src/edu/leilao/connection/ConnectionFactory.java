@@ -13,7 +13,7 @@ public class ConnectionFactory {
 			String driver = "com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://127.0.0.1:3306/leilao";
 			String user = "root";
-			String pass = "root";
+			String pass = "";
 
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, user, pass);
@@ -30,12 +30,15 @@ public class ConnectionFactory {
 
 	public static ConnectionFactory getInstancia() {
 		if (instancia == null) {
+			System.out.println("Instância Nula. Criando nova instância...");
 			instancia = new ConnectionFactory();
 		}
+		System.out.println("Retornando instância...");
 		return instancia;
 	}
 
 	public Connection getConnection() {
+		System.out.println("Retornando conexão...");
 		return connection;
 	}
 }

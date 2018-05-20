@@ -36,4 +36,24 @@ public class UC01Login {
 		assertEquals(null, np);
 	}
 
+	@Test
+	public void CT04UC01AdicionarNovoUsuario_com_sucesso() {
+		String user = "sistemaleilao";
+		String pass = "senha";
+		assertTrue(login.adicionarNovoUsuario(user, pass));
+	}
+	
+	@Test(expected=RuntimeException.class)
+	public void CT05UC01AdicionarNovoUsuario_dados_invalidos() {
+		String user = "";
+		String pass = "senha";
+		assertFalse(login.adicionarNovoUsuario(user, pass));
+	}
+	
+	@Test(expected=RuntimeException.class)
+	public void CT06UC01AdicionarNovoUsuario_dados_invalidos() {
+		String user = "sistemaleilao";
+		String pass = "";
+		assertFalse(login.adicionarNovoUsuario(user, pass));
+	}
 }
