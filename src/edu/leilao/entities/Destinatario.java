@@ -1,6 +1,11 @@
 package edu.leilao.entities;
 
-public class Destinatario {
+import java.io.Serializable;
+
+import edu.leilao.interfaces.CRUDInterface;
+
+public class Destinatario implements Serializable, CRUDInterface{
+	private static final long serialVersionUID = 5752008388687868452L;
 	private int id;
 	private String destinatario;
 	private String endereco;
@@ -37,20 +42,28 @@ public class Destinatario {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	
-	public void cadastrarDestinatario() {
+
+	@Override
+	public boolean cadastrar() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void editar() {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public void pesquisarDestinatario() {
+
+	@Override
+	public void pesquisar() {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public void editarDestinatario() {
-		
-	}
-	
-	public void excluirDestinatario() {
+
+	@Override
+	public void excluir() {
+		// TODO Auto-generated method stub
 		
 	}
 }

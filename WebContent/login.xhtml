@@ -5,19 +5,20 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Leilão de Fretes: Login</title>
+	<title>Leilão de Fretes: Cadastro de Usuário</title>
 </h:head>
 <h:body>
-	<h1>Login</h1>
+	<h1>Criar Novo Usuário</h1>
+	<h2>Cadastre seu login</h2>
 	<h:form>
-		<h:messages />
 		<h:panelGrid columns="2">
 			<h:outputText value="Usuário" />
 			<h:inputText id="txtUsuario" value="#{loginBean.login.userName}" />
 			<h:outputText value="Senha" />
 			<h:inputText id="txtSenha" value="#{loginBean.login.senha}" />
-			<h:commandButton id="btnEntrar" value="Entrar" />
+			<h:commandButton value="Cadastrar" action="#{loginBean.adicionarNovoUsuario}"/>
 		</h:panelGrid>
 	</h:form>
 </h:body>
+
 </html>

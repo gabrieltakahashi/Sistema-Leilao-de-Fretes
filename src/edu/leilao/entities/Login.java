@@ -1,16 +1,13 @@
 package edu.leilao.entities;
 
 import java.io.Serializable;
-import java.sql.SQLException;
-
-import edu.leilao.login.dao.LoginImplements;
 
 public class Login implements Serializable {
 	private static final long serialVersionUID = 3267361303846966907L;
 	private String userName = "";
 	private String senha = "";
-	private String mudarSenha = null;
-	private static LoginImplements login_db;
+	private String trocarSenha = null;
+	private String confirmaNovaSenha = null;
 
 	public String getUserName() {
 		return userName;
@@ -28,35 +25,37 @@ public class Login implements Serializable {
 		this.senha = senha;
 	}
 
-	public String getMudarSenha() {
-		return mudarSenha;
+	public String getTrocarSenha() {
+		return trocarSenha;
 	}
 
-	public void setMudarSenha(String mudarSenha) {
-		this.mudarSenha = mudarSenha;
+	public void setTrocarSenha(String trocarSenha) {
+		this.trocarSenha = trocarSenha;
 	}
 
-	public boolean adicionarNovoUsuario(String u, String p) {
-		if (!(u == "" & p == "")) {
-			try {
-				login_db.adicionarNovoUsuario();
-				System.out.println("Novo login criado.");
-			} catch (SQLException e) {
-				System.out.println("SQL Exception");
-				e.printStackTrace();
-			}
+	public String getConfirmaNovaSenha() {
+		return confirmaNovaSenha;
+	}
+
+	public void setConfirmaNovaSenha(String confirmaNovaSenha) {
+		this.confirmaNovaSenha = confirmaNovaSenha;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public boolean validarNovaSenha() {
+		if (trocarSenha == confirmaNovaSenha) {
 			return true;
 		} else {
-			System.out.println("Usuário ou Senha inválido." + "\nPreencha Novamente.");
-			return false;
+		return false;
 		}
 	}
 
-	public void editarSenha() {
-
-	}
-
-	public void pesquisarSenha() {
-
+	public void limpar() {
+		userName = "";
+		senha = "";
+		trocarSenha = "";
 	}
 }
