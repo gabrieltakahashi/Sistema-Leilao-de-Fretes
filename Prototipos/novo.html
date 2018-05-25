@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+     <nav class="navbar navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Logo</a>
+                <a class="nav-link " href="leiloes.html">Meus Leilões</a> &nbsp;
+        <a class="nav-link " href="ofertas.html">Minhas Ofertas</a>
+        <ul class="nav navbar-nav pull-xs-right">
+         <li class="nav-item">
+              <i class="ion-gear-a"></i>    <small>  Bem vindo, Usuário#01! </small>
+          </li>
+          
+          <li class="nav-item">
+            <!-- Add "active" class when you're on that page" -->
+
+            <a class="nav-link " href="index(logged-in).html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="novo.html">
+              <i class="ion-gear-a"></i>&nbsp;Novo Leilão
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="novo(destinatario).html">Destinatários</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="novo(mercadoria).html">Mercadorias</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html">Conta</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="editor-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <form>
+          <fieldset>
+            <fieldset class="form-group">
+                <input type="text" class="form-control form-control-lg" placeholder="Article Title">
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" class="form-control" placeholder="What's this article about?">
+            </fieldset>
+            <fieldset class="form-group">
+                <textarea class="form-control" rows="8" placeholder="Write your article (in markdown)"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="text" class="form-control" placeholder="Enter tags"><div class="tag-list"></div>
+            </fieldset>
+           <fieldset class="form-group">
+           <select class="form-control" >
+           	<option value="" >Mercadoria</option>
+           	<option value="">Produto #1</option>
+		<option value="">Uma Caixa</option>
+		<option value="">Engradados de Metal</option>		
+           </select>
+          </fieldset>
+            
+           <fieldset class="form-group">
+           <select class="form-control" >
+           	<option value="" >Destinatário</option>
+           	<option value="">R. Cinco</option>
+		<option value="">Av. Seis</option>
+           </select>
+          </fieldset>
+          
+          <fieldset class="form-group">
+           <select class="form-control" >
+           	<option value="">Remetente</option>
+           	<option value="">R. Cinco</option>
+		<option value="">Av. Seis</option>
+           </select>
+          </fieldset>
+
+            <button class="btn btn-lg pull-xs-right btn-primary" type="button">
+                Criar Leilao
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+ 
+   <footer>
+      <div class="container">
+        <a href="/" class="logo-font">Logo</a>
+        <span class="attribution">
+         Descrição do site, descrição do site, descrição do site.
+        </span>
+      </div>
+    </footer>
+
+  </body>
+</html>
